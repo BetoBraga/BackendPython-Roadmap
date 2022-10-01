@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+    <br>
+    {{ movimentacao.id }} -- {{ movimentacao.tipo }} -- {{ movimentacao.data_inicio }} --
+    {{ movimentacao.data_fim }} 
+    <br> 
+<form action="{% url 'update' movimentacao.id %}" method="POST">
+    {% csrf_token %}
+        Tipo de Movimentação <br>
+        <input type="text" name="tipo"><br>
+        Data de Início<br>
+        <input type="datetime-local" name="data_inicio"><br>
+        Data de Conclusão<br>
+        <input type="datetime-local" name="data_fim"><br>
+        <button type="submit">Adicionar</button>
+    </form>
+
+</body>
+</html>
