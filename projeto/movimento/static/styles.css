@@ -1,0 +1,43 @@
+table {
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 1rem;
+    width: max-content;
+    margin-inline: auto;
+}
+
+h3 {
+    width: max-content;
+    margin-inline: auto;
+}
+
+
+form {
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: max-content;
+    padding: 1rem;
+    margin-inline: auto;
+}
+
+.margem {
+    margin-bottom: 1rem;
+    padding-inline: 1rem;
+}
+
+body {
+    background-image: url("./bg.jpeg");
+    background-size: cover;
+}
+
+input {
+    background: transparent;
+}

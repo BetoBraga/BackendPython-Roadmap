@@ -4,6 +4,7 @@ from .models import Movimentacao
 def home(request):
     movimentacoes = Movimentacao.objects.all()
     return render(request, 'home.html', {"movimentacoes": movimentacoes})
+    
 
 def salvar(request):
     tipo = request.POST.get("tipo")

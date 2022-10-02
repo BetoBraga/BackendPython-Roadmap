@@ -6,44 +6,47 @@
     <title>Example</title>
 </head>
 <body>
-   
-<p> Read do CRUD </p>
+    
+   {% load static %}
+   <link href="{% static "styles.css" %}" rel="stylesheet">
+
+<h3> Read do CRUD </h3>
     <table>
-        <tr>  
-            <td>ID</td>  
-            <td>CLIENTE</td>  
-            <td>NÚMERO DO CONTEINER</td>  
-            <td>TIPO DO CONTEINER</td> 
-            <td>STATUS DO CONTEINER</td> 
-            <td>CATEGORIA DO CONTEINER</td>  
+        <tr class="margem">  
+            <td class="margem">ID</td>  
+            <td class="margem">CLIENTE</td>  
+            <td class="margem">NÚMERO DO CONTEINER</td>  
+            <td class="margem">TIPO DO CONTEINER</td> 
+            <td class="margem">STATUS DO CONTEINER</td> 
+            <td class="margem">CATEGORIA DO CONTEINER</td>  
         </tr>  
 {% for conteiner in conteiners %}  
-    <tr>  
-        <td>{{ conteiner.id }}</td>  
-        <td>{{ conteiner.nome_cliente }}</td>  
-        <td>{{ conteiner.num_conteiner }}</td>  
-        <td>{{ conteiner.tipo_conteiner }}</td> 
-        <td>{{ conteiner.status_conteiner }}</td> 
-        <td>{{ conteiner.categoria_conteiner }}</td> 
-       <td> <a href="{% url 'editar' conteiner.id%}"> Editar </a> </td> 
-       <td> <a href="{% url 'delete' conteiner.id%}"> Deletar </a> </td> 
+    <tr class="margem">  
+        <td class="margem" >{{ conteiner.id }}</td>  
+        <td class="margem" >{{ conteiner.nome_cliente }}</td>  
+        <td class="margem" >{{ conteiner.num_conteiner }}</td>  
+        <td class="margem" >{{ conteiner.tipo_conteiner }}</td> 
+        <td class="margem" >{{ conteiner.status_conteiner }}</td> 
+        <td class="margem" >{{ conteiner.categoria_conteiner }}</td> 
+       <td class="margem" > <a href="{% url 'editar' conteiner.id%}"> Editar </a> </td> 
+       <td class="margem" > <a href="{% url 'delete' conteiner.id%}"> Deletar </a> </td> 
     </tr>  
 {% endfor %}  
     </table>
 <br>
-<p> Create do CRUD </p>
+<h3> Create do CRUD </h3>
     <form action="{% url 'salvar' %}" method="POST">
         {% csrf_token %}
         Nome do Cliente <br>
-        <input type="text" name="nome_cliente"><br>
+        <input class="margem" type="text" name="nome_cliente"><br>
         Número do Conteiner<br>
-        <input type="text" name="num_conteiner"><br>
+        <input class="margem" type="text" name="num_conteiner"><br>
         Tipo do Conteiner<br>
-        <input type="text" name="tipo_conteiner"><br>
+        <input class="margem" type="text" name="tipo_conteiner"><br>
         Status do Conteiner<br>
-        <input type="text" name="status_conteiner"><br>
+        <input class="margem" type="text" name="status_conteiner"><br>
         Categoria do Conteiner<br>
-        <input type="text" name="categoria_conteiner"><br>
+        <input class="margem" type="text" name="categoria_conteiner"><br>
         <button type="submit">Adicionar</button>
     </form>
 

@@ -7,27 +7,30 @@
 </head>
 <body>
    
-<p> Read do CRUD </p>
+    {% load static %}
+    <link href="{% static "styles.css" %}" rel="stylesheet">
+ 
+<h3> Read do CRUD </h3>
     <table>
-        <tr>  
-            <td>ID</td>  
-            <td>TIPO DE MOVIMENTAÇÃO</td>  
-            <td>DATA DE INÍCIO</td>  
-            <td>DATA DE CONCLUSÃO</td> 
+        <tr class="margem">  
+            <td class="margem">ID</td>  
+            <td class="margem">TIPO DE MOVIMENTAÇÃO</td>  
+            <td class="margem">DATA DE INÍCIO</td>  
+            <td class="margem">DATA DE CONCLUSÃO</td> 
         </tr>  
 {% for movimentacao in movimentacoes %}  
-    <tr>  
-        <td>{{ movimentacao.id }}</td>  
-        <td>{{ movimentacao.tipo }}</td>  
-        <td>{{ movimentacao.data_inicio }}</td>  
-        <td>{{ movimentacao.data_fim }}</td> 
-       <td> <a href="{% url 'editar' movimentacao.id%}"> Editar </a> </td> 
-       <td> <a href="{% url 'delete' movimentacao.id%}"> Deletar </a> </td> 
+    <tr class="margem">  
+        <td class="margem">{{ movimentacao.id }}</td>  
+        <td class="margem">{{ movimentacao.tipo }}</td>  
+        <td class="margem">{{ movimentacao.data_inicio }}</td>  
+        <td class="margem">{{ movimentacao.data_fim }}</td> 
+       <td class="margem"> <a href="{% url 'editar' movimentacao.id%}"> Editar </a> </td> 
+       <td class="margem"> <a href="{% url 'delete' movimentacao.id%}"> Deletar </a> </td> 
     </tr>  
 {% endfor %}  
     </table>
 <br>
-<p> Create do CRUD </p>
+<h3> Create do CRUD </h3>
     <form action="{% url 'salvar' %}" method="POST">
         {% csrf_token %}
         Tipo de Movimentação <br>

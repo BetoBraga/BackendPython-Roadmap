@@ -6,6 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 <body>
+
+    {% load static %}
+    <link href="{% static "styles.css" %}" rel="stylesheet">
+ 
     <br>
     {{ conteiner.id }} -- {{ conteiner.nome_cliente }} -- {{ conteiner.num_conteiner }} --
     {{ conteiner.tipo_conteiner }} -- {{ conteiner.status_conteiner }} -- {{ conteiner.categoria_conteiner }}
@@ -13,15 +17,15 @@
 <form action="{% url 'update' conteiner.id %}" method="POST">
     {% csrf_token %}
     Nome do Cliente <br>
-    <input type="text" name="nome_cliente" value="{{conteiner.nome_cliente}}"><br>
+    <input class="margem" type="text" name="nome_cliente" value="{{conteiner.nome_cliente}}"><br>
     Número do Conteiner<br>
-    <input type="text" name="num_conteiner" value="{{conteiner.num_conteiner}}"><br>
+    <input class="margem" type="text" name="num_conteiner" value="{{conteiner.num_conteiner}}"><br>
     Tipo do Conteiner<br>
-    <input type="text" name="tipo_conteiner" value="{{conteiner.tipo_conteiner}}"><br>
+    <input class="margem" type="text" name="tipo_conteiner" value="{{conteiner.tipo_conteiner}}"><br>
     Status do Conteiner<br>
-    <input type="text" name="status_conteiner" value="{{conteiner.status_conteiner}}"><br>
+    <input class="margem" type="text" name="status_conteiner" value="{{conteiner.status_conteiner}}"><br>
     Categoria do Conteiner<br>
-    <input type="text" name="categoria_conteiner" value="{{conteiner.categoria_conteiner}}"><br>
+    <input class="margem" type="text" name="categoria_conteiner" value="{{conteiner.categoria_conteiner}}"><br>
     <button type="submit">Salvar</button>
 </form>
 
